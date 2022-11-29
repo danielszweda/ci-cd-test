@@ -5,7 +5,8 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   buildWindows64:
     name: Build for ${{ matrix.targetPlatform }}
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    #runs-on: self-hosted
     strategy:
       fail-fast: false
       matrix:
@@ -27,7 +28,7 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
           UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
         with:
-          customImage: 'unityci/editor:ubuntu-2021.3.0f1-windows-mono-1.0.1'
+          #customImage: 'unityci/editor:ubuntu-2021.3.0f1-windows-mono-1.0.1'
           targetPlatform: ${{ matrix.targetPlatform }}
       - uses: actions/upload-artifact@v2
         with:
