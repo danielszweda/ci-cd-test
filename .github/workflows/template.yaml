@@ -6,8 +6,8 @@ jobs:
   buildWindows64:
     name: Build for ${{ matrix.targetPlatform }}
     #runs-on: ubuntu-latest
-    #runs-on: self-hosted
-    runs-on: windows-2019
+    runs-on: self-hosted
+    #runs-on: windows-2019
     strategy:
       fail-fast: false
       matrix:
@@ -30,6 +30,7 @@ jobs:
           UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
         with:
           #customImage: 'unityci/editor:ubuntu-2021.3.0f1-windows-mono-1.0.1'
+          customImage: 'unityci/editor:2021.3.0f1-windows-mono-1'
           targetPlatform: ${{ matrix.targetPlatform }}
       - uses: actions/upload-artifact@v2
         with:
