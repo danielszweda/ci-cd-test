@@ -5,8 +5,9 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   buildWindows64:
     name: Build for ${{ matrix.targetPlatform }}
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
     #runs-on: self-hosted
+    runs-on: windows-2019
     strategy:
       fail-fast: false
       matrix:
