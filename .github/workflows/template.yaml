@@ -30,7 +30,8 @@ jobs:
           UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
         with:
           #customImage: 'unityci/editor:ubuntu-2021.3.0f1-windows-mono-1.0.1'
-          customImage: 'unityci/editor:2021.3.0f1-windows-mono-1'
+          #customImage: 'unityci/editor:2021.3.0f1-windows-mono-1'
+          customImage: 'unityci/editor:ubuntu-2021.3.0f1-windows-mono-1'
           targetPlatform: ${{ matrix.targetPlatform }}
       - uses: actions/upload-artifact@v2
         with:
