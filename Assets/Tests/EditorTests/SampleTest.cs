@@ -9,6 +9,6 @@ public class SampleTest
     [Test]
     public void SampleTestSimplePasses()
     {
-        Assert.Equals(0, 1);
+        Assert.Equals(1, 1);
     }
 }
