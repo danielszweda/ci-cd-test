@@ -11,7 +11,7 @@ public class GameBuilder : MonoBehaviour
         var buildPlayerOptions = new BuildPlayerOptions()
         {
             scenes = new[]{"Assets/Scenes/SampleScene.unity"},
-            locationPathName = "Builds/Windows/vrjam.exe",
+            locationPathName = $"Builds/Windows/vrjam-{GetArg("buildNumber")}.exe",
             target = BuildTarget.StandaloneWindows64,
             options = BuildOptions.None
         };
@@ -36,6 +36,18 @@ public class GameBuilder : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
         
+    }
+    private static string GetArg(string name)
+    {
+        var args = Environment.GetCommandLineArgs();
+        for (var i = 0; i < args.Length; i++)
+        {
+            if (args[i] == name && args.Length > i + 1)
+            {
+                return args[i + 1];
+            }
+        }
+        return null;
     }
     
 }
