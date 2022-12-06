@@ -8,10 +8,11 @@ public class GameBuilder : MonoBehaviour
     [MenuItem("Build/Build Windows")]
     public static void BuildWindows()
     {
+        var buildNumber = GetArg("-buildNumber");
         var buildPlayerOptions = new BuildPlayerOptions()
         {
             scenes = new[]{"Assets/Scenes/SampleScene.unity"},
-            locationPathName = $"Builds/Windows/vrjam-{GetArg("-buildNumber")}.exe",
+            locationPathName = $"Builds/Windows/vrjam_{Application.version}-{buildNumber}/vrjam-{buildNumber}.exe",
             target = BuildTarget.StandaloneWindows64,
             options = BuildOptions.None
         };
