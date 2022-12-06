@@ -37,6 +37,12 @@ public class GameBuilder : MonoBehaviour
         }
         
     }
+
+    public static string GetProjectVersion()
+    {
+        return Application.version;
+    }
+    
     private static string GetArg(string name)
     {
         var args = Environment.GetCommandLineArgs();
