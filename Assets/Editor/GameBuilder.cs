@@ -12,7 +12,7 @@ public class GameBuilder : MonoBehaviour
         var buildPlayerOptions = new BuildPlayerOptions()
         {
             scenes = new[]{"Assets/Scenes/SampleScene.unity"},
-            locationPathName = $"Builds/Windows/vrjam_{Application.version}-{buildNumber}/vrjam-{buildNumber}.exe",
+            locationPathName = $"Builds/Windows/vrjam.exe",
             target = BuildTarget.StandaloneWindows64,
             options = BuildOptions.None
         };
@@ -39,11 +39,6 @@ public class GameBuilder : MonoBehaviour
         
     }
 
-    public static string GetProjectVersion()
-    {
-        return Application.version;
-    }
-    
     private static string GetArg(string name)
     {
         var args = Environment.GetCommandLineArgs();
